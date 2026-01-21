@@ -70,6 +70,7 @@
             border-color: #2e7d32;
             color: #2e7d32;
         }
+        input[type="text"],
         input[type="number"] {
             width: 100%;
             padding: 12px 14px;
@@ -78,6 +79,7 @@
             border-radius: 8px;
             background: #fafafa;
         }
+        input[type="text"]:focus,
         input[type="number"]:focus {
             outline: none;
             border-color: #2e7d32;
@@ -138,8 +140,40 @@
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_autoresponse" value="Thank you for your feedback! We appreciate you taking the time to help us improve.">
+            <input type="hidden" name="_next" value="thanks.html">
             
-            <!-- Q1: Overall Experience -->
+            <!-- Q1: Appliance Brand -->
+            <div class="question">
+                <label>What brand was serviced?</label>
+                <input type="text" name="Appliance Brand" placeholder="e.g. Samsung, LG, Whirlpool" required>
+            </div>
+            
+            <!-- Q2: Appliance Type -->
+            <div class="question">
+                <label>What type of appliance?</label>
+                <div class="options">
+                    <input type="radio" name="Appliance Type" value="Refrigerator" id="type1" required>
+                    <label for="type1">Refrigerator</label>
+                    <input type="radio" name="Appliance Type" value="Washer" id="type2">
+                    <label for="type2">Washer</label>
+                    <input type="radio" name="Appliance Type" value="Dryer" id="type3">
+                    <label for="type3">Dryer</label>
+                    <input type="radio" name="Appliance Type" value="Dishwasher" id="type4">
+                    <label for="type4">Dishwasher</label>
+                    <input type="radio" name="Appliance Type" value="Oven/Range" id="type5">
+                    <label for="type5">Oven/Range</label>
+                    <input type="radio" name="Appliance Type" value="Cooktop" id="type6">
+                    <label for="type6">Cooktop</label>
+                    <input type="radio" name="Appliance Type" value="Hood Vent" id="type7">
+                    <label for="type7">Hood Vent</label>
+                    <input type="radio" name="Appliance Type" value="Microwave" id="type8">
+                    <label for="type8">Microwave</label>
+                    <input type="radio" name="Appliance Type" value="Other" id="type9">
+                    <label for="type9">Other</label>
+                </div>
+            </div>
+            
+            <!-- Q3: Overall Experience -->
             <div class="question">
                 <label>How was your overall experience?</label>
                 <div class="options">
@@ -154,7 +188,7 @@
                 </div>
             </div>
             
-            <!-- Q2: Technician Professionalism -->
+            <!-- Q4: Technician Professionalism -->
             <div class="question">
                 <label>Was the technician professional and courteous?</label>
                 <div class="options">
@@ -167,7 +201,7 @@
                 </div>
             </div>
             
-            <!-- Q3: Explanation Clarity -->
+            <!-- Q5: Explanation Clarity -->
             <div class="question">
                 <label>Did the technician explain the work clearly?</label>
                 <div class="options">
@@ -180,13 +214,13 @@
                 </div>
             </div>
             
-            <!-- Q4: Price Quoted -->
+            <!-- Q6: Price Quoted -->
             <div class="question">
                 <label>What was the total price quoted? <span class="optional">(optional)</span></label>
                 <input type="number" name="Price Quoted ($)" placeholder="e.g. 150" min="0" step="0.01">
             </div>
             
-            <!-- Q5: Pricing Perception -->
+            <!-- Q7: Pricing Perception -->
             <div class="question">
                 <label>How did you feel about the pricing?</label>
                 <div class="options">
@@ -201,7 +235,7 @@
                 </div>
             </div>
             
-            <!-- Q6: Call Again -->
+            <!-- Q8: Call Again -->
             <div class="question">
                 <label>Would you call us again?</label>
                 <div class="options">
@@ -216,10 +250,10 @@
                 </div>
             </div>
             
-            <!-- Q7: What Could Be Done Better -->
+            <!-- Q9: What Could Be Done Better -->
             <div class="question">
-                <label>What could we do better? <span class="optional">(optional)</span></label>
-                <textarea name="What Could Be Done Better" placeholder="Let us know how we can improve..."></textarea>
+                <label>What could we do better or any additional comments? <span class="optional">(optional)</span></label>
+                <textarea name="Comments" placeholder="Let us know how we can improve or anything else you'd like to share..."></textarea>
             </div>
             
             <button type="submit">Submit Feedback</button>
