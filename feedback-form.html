@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Feedback</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+            padding: 16px;
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        .intro {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        .question {
+            margin-bottom: 24px;
+        }
+        .question label {
+            display: block;
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .options label {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #f0f0f0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .options input[type="radio"]:checked + label {
+            background: #e8f4e8;
+            border-color: #2e7d32;
+            color: #2e7d32;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #2e7d32;
+            background: #fff;
+        }
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+            resize: vertical;
+            min-height: 80px;
+            font-family: inherit;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #2e7d32;
+            background: #fff;
+        }
+        .optional {
+            font-size: 13px;
+            color: #888;
+            font-weight: 400;
+        }
+        button {
+            width: 100%;
+            padding: 14px 20px;
+            background: #2e7d32;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        button:active {
+            background: #256428;
+        }
+        .privacy {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quick Feedback</h1>
+        <p class="intro">Thanks for choosing us! This takes under 30 seconds and helps us serve you better. Your responses are private.</p>
+        
+        <form action="https://formsubmit.co/insuranceappliance@gmail.com" method="POST">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Customer Feedback Received">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Thank you for your feedback! We appreciate you taking the time to help us improve.">
+            
+            <!-- Q1: Overall Experience -->
+            <div class="question">
+                <label>How was your overall experience?</label>
+                <div class="options">
+                    <input type="radio" name="Overall Experience" value="Excellent" id="exp1" required>
+                    <label for="exp1">Excellent</label>
+                    <input type="radio" name="Overall Experience" value="Good" id="exp2">
+                    <label for="exp2">Good</label>
+                    <input type="radio" name="Overall Experience" value="Fair" id="exp3">
+                    <label for="exp3">Fair</label>
+                    <input type="radio" name="Overall Experience" value="Poor" id="exp4">
+                    <label for="exp4">Poor</label>
+                </div>
+            </div>
+            
+            <!-- Q2: Technician Professionalism -->
+            <div class="question">
+                <label>Was the technician professional and courteous?</label>
+                <div class="options">
+                    <input type="radio" name="Technician Professionalism" value="Yes, absolutely" id="pro1" required>
+                    <label for="pro1">Yes, absolutely</label>
+                    <input type="radio" name="Technician Professionalism" value="Mostly" id="pro2">
+                    <label for="pro2">Mostly</label>
+                    <input type="radio" name="Technician Professionalism" value="Could improve" id="pro3">
+                    <label for="pro3">Could improve</label>
+                </div>
+            </div>
+            
+            <!-- Q3: Explanation Clarity -->
+            <div class="question">
+                <label>Did the technician explain the work clearly?</label>
+                <div class="options">
+                    <input type="radio" name="Work Explained Clearly" value="Yes, very clear" id="clar1" required>
+                    <label for="clar1">Yes, very clear</label>
+                    <input type="radio" name="Work Explained Clearly" value="Somewhat" id="clar2">
+                    <label for="clar2">Somewhat</label>
+                    <input type="radio" name="Work Explained Clearly" value="Not really" id="clar3">
+                    <label for="clar3">Not really</label>
+                </div>
+            </div>
+            
+            <!-- Q4: Price Quoted -->
+            <div class="question">
+                <label>What was the total price quoted? <span class="optional">(optional)</span></label>
+                <input type="number" name="Price Quoted ($)" placeholder="e.g. 150" min="0" step="0.01">
+            </div>
+            
+            <!-- Q5: Pricing Perception -->
+            <div class="question">
+                <label>How did you feel about the pricing?</label>
+                <div class="options">
+                    <input type="radio" name="Pricing Perception" value="Very fair" id="price1" required>
+                    <label for="price1">Very fair</label>
+                    <input type="radio" name="Pricing Perception" value="Reasonable" id="price2">
+                    <label for="price2">Reasonable</label>
+                    <input type="radio" name="Pricing Perception" value="A bit high" id="price3">
+                    <label for="price3">A bit high</label>
+                    <input type="radio" name="Pricing Perception" value="Too expensive" id="price4">
+                    <label for="price4">Too expensive</label>
+                </div>
+            </div>
+            
+            <!-- Q6: Call Again -->
+            <div class="question">
+                <label>Would you call us again?</label>
+                <div class="options">
+                    <input type="radio" name="Would Call Again" value="Definitely" id="again1" required>
+                    <label for="again1">Definitely</label>
+                    <input type="radio" name="Would Call Again" value="Probably" id="again2">
+                    <label for="again2">Probably</label>
+                    <input type="radio" name="Would Call Again" value="Not sure" id="again3">
+                    <label for="again3">Not sure</label>
+                    <input type="radio" name="Would Call Again" value="Unlikely" id="again4">
+                    <label for="again4">Unlikely</label>
+                </div>
+            </div>
+            
+            <!-- Q7: Additional Comments -->
+            <div class="question">
+                <label>Anything else you'd like to share? <span class="optional">(optional)</span></label>
+                <textarea name="Additional Comments" placeholder="Your feedback helps us improve..."></textarea>
+            </div>
+            
+            <button type="submit">Submit Feedback</button>
+        </form>
+        
+        <p class="privacy">Your feedback is private and sent directly to the owner.</p>
+    </div>
+</body>
+</html>
